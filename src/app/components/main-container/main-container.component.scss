@@ -21,11 +21,24 @@
         }
     }
 
-    .character-card {
-        width: 300px;
-        border: 3px solid $dark-lilac;
-        border-radius: 8px;
-        padding: 10px;
-        box-shadow: 10px 5px 5px $medium-lilac;
+    .characters-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+        .character-card {
+            width: 200px;
+            border: 3px solid $dark-lilac;
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 10px 5px 5px $medium-lilac;
+            margin: 15px;
+
+            img {
+                max-width: 200px;
+            }
+        }
     }
 }

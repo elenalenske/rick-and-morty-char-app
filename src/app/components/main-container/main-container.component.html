@@ -8,25 +8,29 @@
         <button *ngIf="showCharacters" (click)="onHideAll()">Hide all characters</button>
     </div>
 
+    <div *ngIf="showCharacters">
+        Total number of characters shown: {{ allCharacters.length }}
+    </div>
+
     <div class="characters-container" *ngIf="showCharacters">
-        <div class="character-card">
+        <div class="character-card" *ngFor="let char of allCharacters">
             <div>
-                Picture:
+                <img [src]="char.image" />
             </div>
             <div>
-                Name:
+                Name: {{ char.name }}
             </div>
             <div>
-                Status:
+                Status: {{ char.status }}
             </div>
             <div>
-                Species:
+                Species: {{ char.species }}
             </div>
             <div>
-                Gender:
+                Gender: {{ char.gender }}
             </div>
             <div>
-                Origin:
+                Origin: {{ char.location.name }}
             </div>
         </div>
     </div>
