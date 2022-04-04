@@ -1,0 +1,33 @@
+<div class="main-container">
+    <div class="title">
+        Rick and Morty characters
+    </div>
+
+    <div class="button">
+        <button *ngIf="!showCharacters">Show all characters</button>
+        <button *ngIf="showCharacters">Hide all characters</button>
+    </div>
+
+    <div class="characters-container" *ngIf="showCharacters">
+        <div class="character-card">
+            <div>
+                Picture:
+            </div>
+            <div>
+                Name:
+            </div>
+            <div>
+                Status:
+            </div>
+            <div>
+                Species:
+            </div>
+            <div>
+                Gender:
+            </div>
+            <div>
+                Origin:
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+@import 'src/app/styles/variables';
+@import 'src/app/styles/mixins';
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .title {
+        font-size: 36px;
+        font-weight: bold;
+        color: $dark-lilac;
+        padding: 50px;
+    }
+
+    .button {
+        padding-bottom: 50px;
+        button {
+            @include button-styling;
+            // color: $light-lilac;
+            // background: $dark-lilac;
+            // border-radius: 8px;
+            // padding: 10px 15px;
+            // &:hover {
+            //     cursor: pointer;
+            //     color: $lightest-lilac;
+            // }
+        }
+    }
+
+    .character-card {
+        width: 300px;
+        border: 3px solid $dark-lilac;
+        border-radius: 8px;
+        padding: 10px;
+        box-shadow: 10px 5px 5px $medium-lilac;
+    }
+}

@@ -1,0 +1,10 @@
+@mixin button-styling {
+    color: $light-lilac;
+    background: $dark-lilac;
+    border-radius: 8px;
+    padding: 10px 15px;
+    &:hover {
+        cursor: pointer;
+        color: $lightest-lilac;
+    }
+}
