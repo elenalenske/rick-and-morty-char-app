@@ -13,4 +13,11 @@ export class MainContainerComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onShowAll(): void {
+    this.showCharacters = true;
+  }
+
+  onHideAll(): void {
+    this.showCharacters = false;
+  }
 }

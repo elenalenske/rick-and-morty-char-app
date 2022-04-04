@@ -4,8 +4,8 @@
     </div>
 
     <div class="button">
-        <button *ngIf="!showCharacters">Show all characters</button>
-        <button *ngIf="showCharacters">Hide all characters</button>
+        <button *ngIf="!showCharacters" (click)="onShowAll()">Show all characters</button>
+        <button *ngIf="showCharacters" (click)="onHideAll()">Hide all characters</button>
     </div>
 
     <div class="characters-container" *ngIf="showCharacters">
