@@ -6,6 +6,11 @@
     <div class="button">
         <button *ngIf="!showCharacters" (click)="onShowAll()">Show all characters</button>
         <button *ngIf="showCharacters" (click)="onHideAll()">Hide all characters</button>
+
+        <form [formGroup]="characterForm" class="form" *ngIf="!showCharacters">
+            <input formControlName="characterNumber" type="number" min="1" max="20" />
+        </form>
+        <button *ngIf="!showCharacters" (click)="onShowCharacter()" [disabled]="characterForm.invalid">Show a character</button>
     </div>
 
     <div *ngIf="showCharacters">
