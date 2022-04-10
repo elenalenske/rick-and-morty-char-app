@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AllCharacters, Character } from 'src/app/interfaces/characters-interface';
 import { DataService } from 'src/app/services/data.service';
 
