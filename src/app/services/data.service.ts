@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { catchError, Observable, throwError } from 'rxjs';
 import { AllCharacters, Character } from '../interfaces/characters-interface';
 
 @Injectable({
@@ -19,6 +19,12 @@ export class DataService {
 
   getASingleCharacter(number: number): Observable<Character> {
     const url = `https://rickandmortyapi.com/api/character/${number}`
-    return this.http.get<Character>(url);
+    return this.http
+      .get<Character>(url)
+      .pipe(
+        catchError((error: HttpErrorResponse) => {
+          return throwError(() => error);
+        })
+      );
   }
 }
