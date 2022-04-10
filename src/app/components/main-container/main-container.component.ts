@@ -26,6 +26,7 @@ export class MainContainerComponent implements OnInit {
 
   onShowAll(): void {
     this.showCharacters = true;
+    this.showCharacter = false;
     if ( this.allCharacters && this.allCharacters.length) {
       return;
     }
@@ -33,7 +34,6 @@ export class MainContainerComponent implements OnInit {
       // console.log('data:', data)
       this.allCharacters = data.results;
     });
-    this.showCharacter = false;
   }
 
   onHideAll(): void {
