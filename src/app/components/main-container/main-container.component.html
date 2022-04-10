@@ -7,17 +7,18 @@
         <button *ngIf="!showCharacters" (click)="onShowAll()">Show all characters</button>
         <button *ngIf="showCharacters" (click)="onHideAll()">Hide all characters</button>
 
-        <form [formGroup]="characterForm" class="form" *ngIf="!showCharacters">
+        <form [formGroup]="characterForm" class="form" *ngIf="!showCharacters && !showCharacter">
             <input formControlName="characterNumber" type="number" min="1" max="20" />
         </form>
-        <button *ngIf="!showCharacters" (click)="onShowCharacter()" [disabled]="characterForm.invalid">Show a character</button>
+        <button *ngIf="!showCharacters && !showCharacter" (click)="onShowCharacter()" [disabled]="characterForm.invalid">Show a character</button>
+        <button *ngIf="showCharacter" (click)="onHideCharacter()" class="single-character">Hide a character</button>
     </div>
 
-    <div *ngIf="showCharacters">
+    <div *ngIf="showCharacters && allCharacters && allCharacters.length">
         Total number of characters shown: {{ allCharacters.length }}
     </div>
 
-    <div class="characters-container" *ngIf="showCharacters">
+    <div class="characters-container" *ngIf="showCharacters && allCharacters && allCharacters.length">
         <div class="character-card" *ngFor="let char of allCharacters">
             <div>
                 <img [src]="char.image" />
@@ -39,4 +40,10 @@
             </div>
         </div>
     </div>
+
+    <app-character-container
+        *ngIf="showCharacter"
+        [character]="character"
+        (changeACharacter)="onChangeACharacter($event)"
+    ></app-character-container>
 </div>

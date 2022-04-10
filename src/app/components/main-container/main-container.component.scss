@@ -19,11 +19,21 @@
 
         button {
             @include button-styling;
-            width: 100%;
+            width: 275px;
+            display: flex;
+            flex-direction: column;
         }
 
         .form {
             margin-top: 25px;
+
+            input {
+                width: 266px;
+            }
+        }
+
+        .single-character {
+            margin-top: 47px;
         }
     }
 

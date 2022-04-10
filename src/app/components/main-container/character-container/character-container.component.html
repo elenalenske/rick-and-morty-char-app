@@ -1,0 +1,17 @@
+<div class="character-container">
+    <div class="column-1">
+        <img [src]="character.image" />
+    </div>
+
+    <div class="column-2">
+        <div class="name">
+            Name: {{ character.name }}
+        </div>
+        <div class="episode">Episodes:</div>
+        <div class="episodes">
+            <div *ngFor="let episode of character.episode">{{ episode }}</div>
+        </div>
+    </div>
+</div>
+
+<button (click)="onChangeCharacter()">Change a character</button>

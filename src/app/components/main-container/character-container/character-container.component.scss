@@ -1,0 +1,42 @@
+@import 'src/app/styles/variables';
+@import 'src/app/styles/mixins';
+
+.character-container {
+    display: flex;
+    flex-direction: row;
+    border: 3px solid $dark-lilac;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 10px 5px 5px $medium-lilac;
+    width: 600px;
+
+    .column-1 {
+        width: 250px;
+        padding: 15px;
+
+        img {
+            width: 250px;
+            border-radius: 50%;
+        }
+    }
+
+    .column-2 {
+        width: 350px;
+        padding: 15px;
+        max-height: 700px;
+
+        .name, .episode {
+            margin-bottom: 15px;
+        }
+
+        .episodes {
+            height: 90%;
+            overflow-y: auto;
+        }
+    }
+}
+
+button {
+    @include button-styling;
+    margin-top: 10px;
+}

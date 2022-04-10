@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AllCharacters, Character } from 'src/app/interfaces/characters-interface';
 import { DataService } from 'src/app/services/data.service';
 
@@ -13,6 +13,7 @@ export class MainContainerComponent implements OnInit {
   allCharacters: Character[] = [];
   characterForm: FormGroup;
   character: Character;
+  showCharacter: boolean = false;
 
   constructor(
     private dataService: DataService,
@@ -31,7 +32,8 @@ export class MainContainerComponent implements OnInit {
     this.dataService.getAllCharacters().subscribe((data: AllCharacters) => {
       // console.log('data:', data)
       this.allCharacters = data.results;
-    })
+    });
+    this.showCharacter = false;
   }
 
   onHideAll(): void {
@@ -43,9 +45,19 @@ export class MainContainerComponent implements OnInit {
     this.dataService.getASingleCharacter(this.characterForm.value.characterNumber).subscribe((data: Character) => {
       if (data) {
         this.character = data;
+        this.showCharacter = true;
         // console.log('character:', this.character)
       }
     })
+  }
+
+  onHideCharacter(): void {
+    this.showCharacter = false;
+  }
+
+  onChangeACharacter(event: any): void {
+    // console.log('event:', event);
+    this.showCharacter = false;
   }
 
   private initForm(): void {
