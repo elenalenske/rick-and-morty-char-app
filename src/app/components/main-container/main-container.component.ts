@@ -58,6 +58,7 @@ export class MainContainerComponent implements OnInit {
   onChangeACharacter(event: any): void {
     // console.log('event:', event);
     this.showCharacter = false;
+    this.characterForm.reset();
   }
 
   private initForm(): void {
