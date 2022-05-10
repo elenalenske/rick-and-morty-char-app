@@ -11,8 +11,8 @@ import { DataService } from 'src/app/services/data.service';
 export class MainContainerComponent implements OnInit {
   showCharacters: boolean = false;
   allCharacters: Character[] = [];
-  characterForm: FormGroup;
-  character: Character;
+  characterForm!: FormGroup;
+  character!: Character;
   showCharacter: boolean = false;
 
   constructor(

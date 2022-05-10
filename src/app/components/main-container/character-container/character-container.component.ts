@@ -8,7 +8,7 @@ import { EventEmitter } from '@angular/core';
   styleUrls: ['./character-container.component.scss']
 })
 export class CharacterContainerComponent implements OnInit {
-  @Input() character: Character;
+  @Input() character!: Character;
   @Output() changeACharacter: EventEmitter<boolean> = new EventEmitter();
 
   constructor() {}
